@@ -7,7 +7,42 @@ No caso do curso que eu presto, Ciência da computação, além do trabalho escr
 
 Qual a proposta desse semestre?
 -----------
-Criar alguma aplicação que não exista ainda, com uma idéia inovadora.
+Criar um sistema para o monitoramento de árvores e plantas pelo mundo, podendo gerenciar compensação de carbono feita pelas empresas e árvores plantadas por usuários comúns voluntários.
+
+Tecnologias usadas
+-----------
+- nodejs
+- leaflet
+- OpenStreetMap
+- sequelize
+- express
+
+TODO
+-----------
+- adicionar estrutura básica de pastas
+- configurar banco de dados
+- criar página principal (mapa)
+- adicionar campo de pesquisa na página principal
+- adicionar página de login
+- adicionar página de criar usuário (comúm e empresa)
+- adicionar página de criação de árvore que deve estár ligada ao campo de pesquisa
+- adicionar APIs
+
+APIs
+-----------
+- /api
+  - /v1
+    - /users
+      - GET /users/:id
+      - POST /users/:id (create)
+      - PUT /users/:id (update)
+    - /companies
+      - GET /companies/
+    - /trees
+      - GET /trees
+      - GET /trees/:id
+      - POST /trees/:id (create)
+      - PUT /trees/:id (update)
 
 APSs anteriores:
 -----------
