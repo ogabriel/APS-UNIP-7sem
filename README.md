@@ -14,8 +14,10 @@ Tecnologias usadas
 - nodejs
 - leaflet
 - OpenStreetMap
-- sequelize
 - express
+- sequelize
+- postgreSQL (with Postgis)
+- passport
 
 TODO
 -----------
