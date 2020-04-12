@@ -19,6 +19,11 @@ Tecnologias usadas
 - postgreSQL (with Postgis)
 - passport
 
+Instruções:
+-----------
+1. Copie o `.env.sample` para `.env`
+2. Modifique o arquivo `.env` para as configurações do seu setup
+
 TODO
 -----------
 - adicionar estrutura básica de pastas
