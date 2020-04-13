@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
     description: DataTypes.TEXT
   }, {});
   Species.associate = function(models) {
-    // associations can be defined here
+    Species.hasMany(models.Plants);
   };
   return Species;
 };
