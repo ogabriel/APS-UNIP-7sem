@@ -21,8 +21,12 @@ Tecnologias usadas
 
 Instruções:
 -----------
-1. Copie o `.env.sample` para `.env`
-2. Modifique o arquivo `.env` para as configurações do seu setup
+1. Tenha uma versão de node compatível (12.x.x é recomendável)
+2. Instale as dependências com `npm install`
+3. Copie o `.env.sample` para `.env`
+4. Modifique o arquivo `.env` para as configurações do seu setup
+5. Crie o banco de dados com `npx sequelize db:create`
+6. Migrar o banco de dados com `npx sequelize db:migrate`
 
 TODO
 -----------
