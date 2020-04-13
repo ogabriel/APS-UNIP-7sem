@@ -21,7 +21,7 @@ Tecnologias usadas
 
 Instruções:
 -----------
-1. Tenha uma versão de node compatível (12.x.x é recomendável)
+1. Tenha uma versão de nodejs compatível (12.x.x é recomendável)
 2. Instale as dependências com `npm install`
 3. Copie o `.env.sample` para `.env`
 4. Modifique o arquivo `.env` para as configurações do seu setup
