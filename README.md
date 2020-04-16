@@ -27,6 +27,7 @@ Instruções:
 4. Modifique o arquivo `.env` para as configurações do seu setup
 5. Crie o banco de dados com `npx sequelize db:create`
 6. Migrar o banco de dados com `npx sequelize db:migrate`
+7. Para dar start no server (localmente) use `npm run dev`
 
 TODO
 -----------
