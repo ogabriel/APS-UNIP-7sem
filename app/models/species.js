@@ -4,19 +4,19 @@ module.exports = (sequelize, DataTypes) => {
     popularName: {
       type: DataTypes.STRING,
       allowNull: false
-    }
+    },
     scientificName: {
       type: DataTypes.STRING,
       allowNull: false
-    }
+    },
     endangered: {
       type: DataTypes.BOOLEAN,
       defaultValue: false
-    }
+    },
     description: DataTypes.TEXT
   }, {});
   Species.associate = function(models) {
-    Species.hasMany(models.Plants);
+    Species.hasMany(models.Plant);
   };
   return Species;
 };
