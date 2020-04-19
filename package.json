@@ -5,11 +5,11 @@
   "main": "server.js",
   "scripts": {
     "dev": "nodemon",
-    "lint": "eslint .",
-    "fix:lint": "eslint . --fix",
     "fix:format": "prettier . --write",
-    "test": "jest",
-    "start": "node server"
+    "fix:lint": "eslint . --fix",
+    "lint": "eslint .",
+    "start": "node server",
+    "test": "jest"
   },
   "repository": {
     "type": "git",

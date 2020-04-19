@@ -27,5 +27,11 @@ module.exports = {
         'no-console': 'off',
       },
     },
+    {
+      files: ['db/migrations/*.js'],
+      rules: {
+        'no-unused-vars': ['error', {argsIgnorePattern: 'Sequelize'}]
+      },
+    },
   ],
 };
