@@ -1,4 +1,6 @@
 # APS-UNIP-7sem
+[![Build Status](https://travis-ci.com/ogabriel/APS-UNIP-7sem.svg?branch=master)](https://travis-ci.com/ogabriel/APS-UNIP-7sem)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
 
 O que é uma APS?
 =================
