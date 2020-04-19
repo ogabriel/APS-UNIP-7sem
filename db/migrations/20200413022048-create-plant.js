@@ -6,19 +6,19 @@ module.exports = {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
       localization: {
         allowNull: false,
-        type: Sequelize.GEOMETRY('POINT', 4326)
+        type: Sequelize.GEOMETRY('POINT', 4326),
       },
       state: {
         allowNull: false,
         type: Sequelize.ENUM,
-        values: ['alive', 'dead', 'burned', 'fallen', 'cutted']
+        values: ['alive', 'dead', 'burned', 'fallen', 'cutted'],
       },
       discovered: {
-        type: Sequelize.BOOLEAN
+        type: Sequelize.BOOLEAN,
       },
       userId: {
         allowNull: false,
@@ -27,8 +27,8 @@ module.exports = {
         onDelete: 'SET NULL',
         references: {
           key: 'id',
-          model: 'Users'
-        }
+          model: 'Users',
+        },
       },
       speciesId: {
         allowNull: false,
@@ -37,20 +37,20 @@ module.exports = {
         onDelete: 'SET NULL',
         references: {
           key: 'id',
-          model: 'Species'
-        }
+          model: 'Species',
+        },
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
-      }
+        type: Sequelize.DATE,
+      },
     });
   },
   down: (queryInterface, Sequelize) => {
     return queryInterface.dropTable('Plants');
-  }
+  },
 };
