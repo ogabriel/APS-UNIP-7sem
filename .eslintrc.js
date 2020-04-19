@@ -5,7 +5,9 @@ module.exports = {
     es6: true,
   },
   extends: [
-    'airbnb-base',
+    'eslint:recommended',
+    'plugin:node/recommended',
+    'plugin:prettier/recommended',
   ],
   globals: {
     Atomics: 'readonly',
@@ -15,5 +17,15 @@ module.exports = {
     ecmaVersion: 2018,
   },
   rules: {
+    'prettier/prettier': 'error',
+    'no-console': 'error',
   },
+  overrides: [
+    {
+      files: ['server.js'],
+      rules: {
+        'no-console': 'off',
+      },
+    },
+  ],
 };
