@@ -9,7 +9,7 @@
     "fix:lint": "eslint . --fix",
     "lint": "eslint .",
     "start": "node server",
-    "test": "jest"
+    "test": "jest --passWithNoTests"
   },
   "repository": {
     "type": "git",

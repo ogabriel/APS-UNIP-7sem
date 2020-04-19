@@ -3,7 +3,6 @@
 // Config envs
 require('dotenv').config();
 
-
 const path = require('path');
 const routes = require('./config/routes');
 const express = require('express');
