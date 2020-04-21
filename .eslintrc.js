@@ -34,5 +34,11 @@ module.exports = {
         'no-unused-vars': ['error', { argsIgnorePattern: 'Sequelize' }],
       },
     },
+    {
+      files: 'tests/**/*.js',
+      rules: {
+        'node/no-unpublished-require': 0,
+      },
+    },
   ],
 };
