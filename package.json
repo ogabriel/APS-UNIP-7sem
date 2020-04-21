@@ -10,7 +10,8 @@
     "lint": "eslint .",
     "seed": "sequelize db:seed:all",
     "start": "node server",
-    "test": "jest --passWithNoTests"
+    "test": "jest --passWithNoTests --detectOpenHandles",
+    "unseed": "sequelize db:seed:undo:all"
   },
   "repository": {
     "type": "git",
