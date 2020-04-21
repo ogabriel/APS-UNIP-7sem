@@ -6,6 +6,7 @@
   "main": "server.js",
   "scripts": {
     "dev": "nodemon",
+    "db:create": "sequelize db:create",
     "fix:format": "prettier . --write",
     "fix:lint": "eslint . --fix",
     "lint": "eslint .",

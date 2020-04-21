@@ -8,10 +8,10 @@ branches:
   only:
     - master
 addons:
-  postgresql: 9.6
+  postgresql: 10
   apt:
     packages:
-    - postgresql-9.6-postgis-2.3
+    - postgresql-10-postgis-2.4
 before_script:
   - cp .env.travis .env
-  - psql -c 'CREATE DATABASE aps7_test;' -U postgres
+  - npm run db:create
