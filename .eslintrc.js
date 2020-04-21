@@ -29,9 +29,9 @@ module.exports = {
       },
     },
     {
-      files: ['db/migrations/*.js'],
+      files: ['db/migrations/*.js', 'db/seeders/*.js'],
       rules: {
-        'no-unused-vars': ['error', {argsIgnorePattern: 'Sequelize'}]
+        'no-unused-vars': ['error', { argsIgnorePattern: 'Sequelize' }],
       },
     },
   ],

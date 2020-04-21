@@ -8,6 +8,7 @@
     "fix:format": "prettier . --write",
     "fix:lint": "eslint . --fix",
     "lint": "eslint .",
+    "seed": "sequelize db:seed:all",
     "start": "node server",
     "test": "jest --passWithNoTests"
   },
