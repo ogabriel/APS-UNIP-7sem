@@ -20,7 +20,7 @@ module.exports = {
       discovered: {
         type: Sequelize.BOOLEAN,
       },
-      userId: {
+      UserId: {
         allowNull: false,
         type: Sequelize.INTEGER,
         onUpdate: 'CASCADE',
@@ -30,7 +30,7 @@ module.exports = {
           model: 'Users',
         },
       },
-      speciesId: {
+      SpeciesId: {
         allowNull: false,
         type: Sequelize.INTEGER,
         onUpdate: 'CASCADE',
