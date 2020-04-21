@@ -14,4 +14,4 @@ addons:
     - postgresql-10-postgis-2.4
 before_script:
   - cp .env.travis .env
-  - npm run db:create
+  - NODE_ENV=test npm run db:create
