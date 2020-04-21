@@ -48,9 +48,9 @@ module.exports = {
 
   down: async (queryInterface, Sequelize) => {
     const plantsQuery = await queryInterface.sequelize.query(
-      `SELECT id FROM "Plants" p
-      JOIN "Users" u ON u.id = p.UserId"
-      JOIN "Species" s ON s.id = p.SpeciesId"
+      `SELECT p.id FROM "Plants" p
+      JOIN "Users" u ON u.id = p."UserId"
+      JOIN "Species" s ON s.id = p."SpeciesId"
       WHERE u.company = true AND s.endangered = false`
     );
 
