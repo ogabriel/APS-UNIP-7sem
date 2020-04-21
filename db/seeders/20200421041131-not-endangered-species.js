@@ -27,13 +27,8 @@ module.exports = {
   },
 
   down: (queryInterface, Sequelize) => {
-    return queryInterface.bulkDelete(
-      'Species',
-      [
-        { scientificName: 'Citrus sinensis' },
-        { scientificName: 'Malus domestica' },
-      ],
-      {}
-    );
+    return queryInterface.bulkDelete('Species', [
+      { scientificName: ['Citrus sinensis', 'Malus domestica'] },
+    ]);
   },
 };

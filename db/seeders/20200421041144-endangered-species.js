@@ -27,13 +27,8 @@ module.exports = {
   },
 
   down: (queryInterface, Sequelize) => {
-    return queryInterface.bulkDelete(
-      'Species',
-      [
-        { scientificName: 'Araucaria araucana' },
-        { scientificName: 'Dionaea muscipula' },
-      ],
-      {}
-    );
+    return queryInterface.bulkDelete('Species', [
+      { scientificName: ['Araucaria araucana', 'Dionaea muscipula'] },
+    ]);
   },
 };
