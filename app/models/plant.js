@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
     'Plant',
     {
       localization: {
-        type: DataTypes.GEOMETRY('POINT', 4326),
+        type: DataTypes.GEOMETRY('POINT'),
         allowNull: false,
       },
       state: {

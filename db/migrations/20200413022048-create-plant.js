@@ -10,7 +10,7 @@ module.exports = {
       },
       localization: {
         allowNull: false,
-        type: Sequelize.GEOMETRY('POINT', 4326),
+        type: Sequelize.GEOMETRY('POINT'),
       },
       state: {
         allowNull: false,
