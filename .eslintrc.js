@@ -40,5 +40,11 @@ module.exports = {
         'node/no-unpublished-require': 0,
       },
     },
+    {
+      files: ['public/js/*.js'],
+      rules: {
+        'no-undef': 'off',
+      },
+    },
   ],
 };
