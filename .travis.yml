@@ -11,7 +11,7 @@ addons:
   postgresql: 10
   apt:
     packages:
-    - postgresql-10-postgis-2.4
+      - postgresql-10-postgis-2.4
 before_script:
   - cp .env.travis .env
   - NODE_ENV=test npm run db:create
