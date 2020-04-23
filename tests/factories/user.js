@@ -8,5 +8,12 @@ const defaultOptions = {
   company: false,
 };
 
-module.exports = async (options = {}) =>
-  await User.create(await { ...defaultOptions, ...options });
+const userParams = (options) => ({ ...defaultOptions, ...options });
+
+exports.userParams = (options = {}) => userParams(options);
+
+exports.createUser = async (options = {}) =>
+  await User.create(userParams(options));
+
+exports.buildUser = async (options = {}) =>
+  await User.build(userParams(options));

@@ -1,7 +1,7 @@
 const request = require('supertest');
 const app = require('../../../../app');
 
-const userFactory = require('../../../factories/user');
+const { createUser } = require('../../../factories/user');
 
 describe('GET /users', () => {
   describe('when there are no users', () => {
@@ -14,7 +14,7 @@ describe('GET /users', () => {
   });
 
   describe('when there are users created', () => {
-    beforeEach(() => userFactory({ name: 'John' }));
+    beforeEach(() => createUser({ name: 'John' }));
 
     test('return all the created users', async () => {
       const response = await request(app).get('/api/v1/users');
