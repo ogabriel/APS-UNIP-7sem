@@ -7,7 +7,7 @@ const { Plant, User, Species } = require('../../app/models');
 const defaultOptions = {
   localization: {
     type: 'Point',
-    coordinates: [faker.address.latitude, faker.address.longitude],
+    coordinates: [faker.address.latitude(), faker.address.longitude()],
   },
   state: 'alive',
   discovered: false,
