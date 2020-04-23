@@ -23,7 +23,7 @@ module.exports = {
       UserId: {
         allowNull: false,
         type: Sequelize.INTEGER,
-        onUpdate: 'CASCADE',
+        onUpdate: 'SET NULL',
         onDelete: 'SET NULL',
         references: {
           key: 'id',
@@ -33,7 +33,7 @@ module.exports = {
       SpeciesId: {
         allowNull: false,
         type: Sequelize.INTEGER,
-        onUpdate: 'CASCADE',
+        onUpdate: 'SET NULL',
         onDelete: 'SET NULL',
         references: {
           key: 'id',
