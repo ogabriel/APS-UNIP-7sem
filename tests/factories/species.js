@@ -7,5 +7,12 @@ const defaultOptions = {
   endangered: false,
 };
 
-module.exports = async (options = {}) =>
-  await Species.create(await { ...defaultOptions, ...options });
+const speciesParams = (options) => ({ ...defaultOptions, ...options });
+
+exports.speciesParams = (options = {}) => speciesParams(options);
+
+exports.createSpecies = async (options = {}) =>
+  await Species.create(speciesParams(options));
+
+exports.buildSpecies = async (options = {}) =>
+  await Species.build(speciesParams(options));

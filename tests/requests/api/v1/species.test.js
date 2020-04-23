@@ -1,7 +1,7 @@
 const request = require('supertest');
 const app = require('../../../../app');
 
-const speciesFactory = require('../../../factories/species');
+const { createSpecies } = require('../../../factories/species');
 
 describe('GET /species', () => {
   describe('when there are no species', () => {
@@ -14,7 +14,7 @@ describe('GET /species', () => {
   });
 
   describe('when there are species created', () => {
-    beforeEach(() => speciesFactory({ popularName: 'Laranjeira' }));
+    beforeEach(() => createSpecies({ popularName: 'Laranjeira' }));
 
     test('return all the created species', async () => {
       const response = await request(app).get('/api/v1/species');
