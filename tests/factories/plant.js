@@ -1,8 +1,8 @@
 const faker = require('faker');
 
-const userFactory = require('./user');
-const speciesFactory = require('./species');
-const { Plant } = require('../../app/models');
+const { userParams } = require('./user');
+const { speciesParams } = require('./species');
+const { Plant, User, Species } = require('../../app/models');
 
 const defaultOptions = {
   localization: {
@@ -11,9 +11,16 @@ const defaultOptions = {
   },
   state: 'alive',
   discovered: false,
-  User: userFactory(),
-  Species: speciesFactory(),
+  User: userParams(),
+  Species: speciesParams(),
 };
 
-module.exports = async (options = {}) =>
-  await Plant.create(await { ...defaultOptions, ...options });
+const plantParams = (options) => ({ ...defaultOptions, ...options });
+
+exports.plantParams = (options = {}) => plantParams(options);
+
+exports.createPlant = async (options = {}) =>
+  await Plant.create(plantParams(options), { include: [User, Species] });
+
+exports.buildPlant = async (options = {}) =>
+  await Plant.build(plantParams(options), { include: [User, Species] });

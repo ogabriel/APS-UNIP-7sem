@@ -1,7 +1,7 @@
 const request = require('supertest');
 const app = require('../../../../app');
 
-const plantFactory = require('../../../factories/plant');
+const { createPlant } = require('../../../factories/plant');
 
 describe('GET /plants', () => {
   describe('when there are no plants', () => {
@@ -14,7 +14,7 @@ describe('GET /plants', () => {
   });
 
   describe('when there are plants created', () => {
-    beforeEach(() => plantFactory());
+    beforeEach(() => createPlant({}));
 
     test('return all the created plants', async () => {
       const response = await request(app).get('/api/v1/plants');
