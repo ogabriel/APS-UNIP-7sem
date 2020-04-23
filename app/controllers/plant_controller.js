@@ -1,11 +1,27 @@
 'use strict';
 
 const router = require('express').Router();
-const { Plant } = require('../models');
+const { Plant, Species } = require('../models');
 
-router.get('/', function (req, res) {
+router.get('/', (req, res) => {
   Plant.findAll().then((data) => {
-    res.send(data);
+    res.json(data);
+  });
+});
+
+router.get('/localization', (req, res) => {
+  Plant.findAll({ include: Species }).then((data) => {
+    const localizations = data.map((plant) => {
+      return {
+        type: 'Feature',
+        properties: {
+          popupContent: plant.Species.popularName,
+        },
+        geometry: plant.localization,
+      };
+    });
+
+    res.json(localizations);
   });
 });
 

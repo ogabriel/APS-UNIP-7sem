@@ -26,3 +26,28 @@ describe('GET /plants', () => {
     });
   });
 });
+
+describe('GET /plants/localization', () => {
+  describe('when there are no plants', () => {
+    test('return an empty array', async () => {
+      const response = await request(app).get('/api/v1/plants/localization');
+
+      expect(response.statusCode).toBe(200);
+      expect(response.body).toEqual([]);
+    });
+  });
+
+  describe('when there are plants created', () => {
+    beforeEach(() => createPlant({}));
+
+    test('return all the created plants', async () => {
+      const response = await request(app).get('/api/v1/plants/localization');
+
+      expect(response.statusCode).toBe(200);
+      expect(response.body).not.toEqual([]);
+      expect(response.body.length).toEqual(1);
+      expect(response.body[0].type).toEqual('Feature');
+      expect(response.body[0].properties).not.toEqual({});
+    });
+  });
+});
