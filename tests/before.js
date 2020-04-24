@@ -1,6 +1,6 @@
 const db = require('../app/models');
 
-beforeEach(async () => {
+afterEach(async () => {
   const models = Object.values(db.sequelize.models);
 
   return await models.forEach((tableName) => {
