@@ -7,11 +7,12 @@ script:
 branches:
   only:
     - master
+env:
+  - TEST_DATABASE_URL=postgres://postgres@localhost/aps7-test
 addons:
   postgresql: 11
   apt:
     packages:
       - postgresql-11-postgis-2.5
 before_script:
-  - cp .env.travis .env
   - NODE_ENV=test npm run db:create
