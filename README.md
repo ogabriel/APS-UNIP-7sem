@@ -35,14 +35,10 @@ Criar um sistema para o monitoramento de árvores e plantas pelo mundo, podendo 
 
 ## TODO
 
-- adicionar estrutura básica de pastas
-- configurar banco de dados
-- criar página principal (mapa)
-- adicionar campo de pesquisa na página principal
+- adicionar campo de pesquisa na página principal (com um botão de criar árvores e configurações)
 - adicionar página de login
 - adicionar página de criar usuário (comúm e empresa)
-- adicionar página de criação de árvore que deve estár ligada ao campo de pesquisa
-- adicionar APIs
+- adicionar página de criação de árvore
 
 ## APIs
 
