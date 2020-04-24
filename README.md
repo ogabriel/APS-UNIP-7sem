@@ -30,7 +30,8 @@ Criar um sistema para o monitoramento de árvores e plantas pelo mundo, podendo 
 4. Modifique o arquivo `.env` para as configurações do seu setup
 5. Crie o banco de dados com `npx sequelize db:create` ou `npm run db:create`
 6. Migrar o banco de dados com `npx sequelize db:migrate` ou `npm run db:migrate`
-7. Para dar start no server (localmente) use `npm run dev`
+7. Para popular o banco de dados use `npx sequelize db:seed:all` ou `npm run seed`
+8. Para dar start no server (localmente) use `npm run dev`
 
 ## TODO
 
