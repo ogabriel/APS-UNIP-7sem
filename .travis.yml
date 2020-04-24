@@ -10,9 +10,9 @@ branches:
 env:
   - TEST_DATABASE_URL=postgres://postgres@localhost/aps7-test
 addons:
-  postgresql: 11
+  postgresql: 10
   apt:
     packages:
-      - postgresql-11-postgis-2.5
+      - postgresql-10-postgis-2.4
 before_script:
   - NODE_ENV=test npm run db:create
