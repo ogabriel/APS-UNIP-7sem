@@ -12,15 +12,12 @@ No caso do curso que eu presto, Ciência da computação, além do trabalho escr
 
 Criar um sistema para o monitoramento de árvores e plantas pelo mundo, podendo gerenciar compensação de carbono feita pelas empresas e árvores plantadas por usuários comúns voluntários.
 
-## Tecnologias usadas
+## Requerimentos
 
-- nodejs
-- leaflet
-- OpenStreetMap
-- express
-- sequelize
-- postgreSQL (with Postgis)
-- passport
+- nodejs (>=10.20.1)
+- postgres (>= 10)
+- postgis (>=2.4)
+- acesso a internet (por causa do leaflet)
 
 ## Instruções:
 
@@ -55,6 +52,16 @@ Criar um sistema para o monitoramento de árvores e plantas pelo mundo, podendo 
       - GET /trees/:id
       - POST /trees/:id (create)
       - PUT /trees/:id (update)
+
+## Tecnologias a serem usadas
+
+- nodejs
+- leaflet
+- OpenStreetMap
+- express
+- sequelize
+- postgreSQL (with Postgis)
+- passport
 
 ## APSs anteriores:
 
