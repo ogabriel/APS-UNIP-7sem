@@ -1,9 +1,9 @@
-html, body {
-  height: 99%;
-  overflow: hidden;
-  width: 99.6%;
+html,
+body {
+  height: 100%;
 }
+
 #mapid {
   width: auto;
-  height: 100%;
+  height: 92%;
 }
