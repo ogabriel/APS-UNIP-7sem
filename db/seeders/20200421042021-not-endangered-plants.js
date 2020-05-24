@@ -18,7 +18,7 @@ module.exports = {
         {
           localization: Sequelize.fn(
             'ST_GeomFromText',
-            'POINT(-23.550404 -46.633906)'
+            'POINT(-46.635906 -23.554604)'
           ),
           state: 'alive',
           discovered: false,
@@ -30,7 +30,7 @@ module.exports = {
         {
           localization: Sequelize.fn(
             'ST_GeomFromText',
-            'POINT(-23.550404 -45.633906)',
+            'POINT(-46.633706 -23.552404)',
             '4326'
           ),
           state: 'alive',
