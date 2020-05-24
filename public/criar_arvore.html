@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Criar Árvore</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link href="./css/bootstrap.min.css" rel="stylesheet" />
+    <link href="./css/form.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <form>
+      <h1 class="h3 mb-3 font-weight-normal">Crie sua árvore</h1>
+
+      <div class="form-group">
+        <label for="inputLocalization">Localização</label>
+        <input
+          type="localization"
+          id="inputLocalization"
+          class="form-control"
+          placeholder="Insira a localização"
+          required
+          autofocus
+        />
+      </div>
+      <div class="form-group">
+        <label for="inputType">Tipo de árvore</label>
+        <select id="inputType" class="custom-select" multiple>
+          <option>Laranjeira</option>
+          <option>Macieira</option>
+          <option>Araucária Chilena</option>
+          <option>Dioneia</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="inputState">Estado da árvore</label>
+        <select id="inputState" class="custom-select" multiple>
+          <option selected>Viva</option>
+          <option>Cortada</option>
+          <option>Caida</option>
+          <option>Queimada</option>
+          <option>Morta</option>
+        </select>
+      </div>
+      <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" id="inputDiscovered" />
+        <label class="form-check-label" for="inputDiscovered"
+          >A árvore foi plantada por mim</label
+        >
+      </div>
+      <button type="submit" class="btn btn-lg btn-primary btn-block">
+        Confirmar
+      </button>
+    </form>
+  </body>
+</html>
