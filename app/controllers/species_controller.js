@@ -9,4 +9,10 @@ router.get('/', function (req, res) {
   });
 });
 
+router.get('/:id', function (req, res) {
+  Species.findByPk(req.params.id).then((data) => {
+    res.json(data);
+  });
+});
+
 module.exports = router;
