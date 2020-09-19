@@ -8,7 +8,7 @@
 APS, ou, Atividade Prática Supervisionada, é um exercício em grupo feito semestralmente pelos alunos da instituição de ensino UNIP. O tema, indiferente do curso que está sendo prestado, está sempre ligado a soluções sustentáveis ou ao meio ambiente.
 No caso do curso que eu presto, Ciência da computação, além do trabalho escrito, tem de ser entregue uma aplicação, cujo os requisitos são ditados pelo coordenador do curso.
 
-Este trabalho também tem uma parte [escrita](https://github.com/ogabriel/APS-UNIP-7sem-doc)
+Este trabalho também possui uma parte [escrita](https://github.com/ogabriel/APS-UNIP-7sem-doc).
 
 ## Qual a proposta desse semestre?
 
