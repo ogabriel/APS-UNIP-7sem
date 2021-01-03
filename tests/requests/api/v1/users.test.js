@@ -3,26 +3,121 @@ const app = require('../../../../app');
 
 const { createUser } = require('../../../factories/user');
 
-describe('GET /users', () => {
-  describe('when there are no users', () => {
-    test('return an empty array', async () => {
-      const response = await request(app).get('/api/v1/users');
+describe('GET /users/:id', () => {
+  describe('when the user is not created', () => {
+    test('return an empty object', async () => {
+      const response = await request(app).get('/api/v1/users/1');
 
-      expect(response.statusCode).toBe(200);
-      expect(response.body).toEqual([]);
+      expect(response.statusCode).toBe(404);
+      expect(response.body).toEqual({});
     });
   });
 
-  describe('when there are users created', () => {
+  describe('when the user is created', () => {
     beforeEach(() => createUser({ name: 'John' }));
 
-    test('return all the created users', async () => {
-      const response = await request(app).get('/api/v1/users');
+    test('return the created user', async () => {
+      const user = await createUser({ name: 'John' });
+      const user_ide = user.id;
+
+      const response = await request(app).get(`/api/v1/users/${user_id}`);
 
       expect(response.statusCode).toBe(200);
-      expect(response.body).not.toEqual([]);
-      expect(response.body.length).toEqual(1);
-      expect(response.body[0].name).toEqual('John');
+      expect(response.body.id).toEqual(user_id);
+      expect(response.body.name).toEqual('John');
+    });
+  });
+});
+
+describe('POST /users', () => {
+  describe('when the user data is incorrect', () => {
+    test('return an empty object when name is missing', async () => {
+      const user_data = {
+        email: 'john@doe.com',
+        password: 'password',
+        confirmation_password: 'password',
+      };
+
+      const response = await request(app)
+        .post('/api/v1/users')
+        .send(user_data)
+        .set('Accept', 'application/json');
+
+      expect(response.statusCode).toBe(400);
+      expect(response.body).toEqual({ errors: ['User.email cannot be null'] });
+    });
+
+    test('return an empty object when password is missing', async () => {
+      const user_data = {
+        name: 'John',
+        email: 'john@doe.com',
+        confirmation_password: 'password',
+      };
+
+      const response = await request(app)
+        .post('/api/v1/users')
+        .send(user_data)
+        .set('Accept', 'application/json');
+
+      expect(response.statusCode).toBe(400);
+      expect(response.body).toEqual({ errors: ['Wrong password'] });
+    });
+
+    test('return an empty object when confirmation_password is missing', async () => {
+      const user_data = {
+        name: 'John',
+        email: 'john@doe.com',
+        password: 'password',
+        confirmation_password: 'password',
+      };
+
+      const response = await request(app)
+        .post('/api/v1/users')
+        .send(user_data)
+        .set('Accept', 'application/json');
+
+      expect(response.statusCode).toBe(200);
+      expect(response.body.id).not.toEqual(null);
+      expect(response.body.name).toEqual('John');
+      expect(response.body.email).toEqual('john@doe.com');
+    });
+  });
+});
+
+describe('POST /users/login and DELETE /users/logout', () => {
+  describe('when the user is not created', () => {
+    test('return an empty object on login', async () => {
+      const response = await request(app)
+        .post('/api/v1/users/login')
+        .send({ email: 'john@doe.com', password: 'password' })
+        .set('Accept', 'application/json');
+
+      expect(response.statusCode).toBe(302);
+      expect(response.redirect).toBe(true);
+      expect(response.headers.location).toBe(
+        '/login.html?error=Senha%20ou%20e-mail%20incorreto'
+      );
+    });
+  });
+
+  describe('when the user is created', () => {
+    test('return success on login and success on logout', async () => {
+      const user = await createUser({ name: 'John', password: 'password' });
+
+      const response_login = await request(app)
+        .post('/api/v1/users/login')
+        .send({ email: user.email, password: 'password' })
+        .set('Accept', 'application/json');
+
+      expect(response_login.statusCode).toBe(302);
+      expect(response_login.redirect).toBe(true);
+      expect(response_login.headers.location).toBe('/mapa.html');
+
+      const response_logout = await request(app).delete('/api/v1/users/logout');
+
+      expect(response_logout.statusCode).toBe(302);
+      expect(response_logout.redirect).toBe(true);
+      expect(response_logout.headers.location).toBe('/login.html');
     });
   });
 });
