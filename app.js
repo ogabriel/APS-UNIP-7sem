@@ -15,12 +15,12 @@ app.use(express.json());
 
 // Configure session
 app.use(
-    session({
-        secret: process.env.SESSION_SECRET || 'aps8',
-        resave: false,
-        saveUninitialized: true,
-        cookie: { secure: treu},
-    })
+  session({
+    secret: process.env.SESSION_SECRET || 'aps8',
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: true },
+  })
 );
 
 // Passport middleware

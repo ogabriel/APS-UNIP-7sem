@@ -18,7 +18,7 @@ describe('GET /users/:id', () => {
 
     test('return the created user', async () => {
       const user = await createUser({ name: 'John' });
-      const user_ide = user.id;
+      const user_id = user.id;
 
       const response = await request(app).get(`/api/v1/users/${user_id}`);
 
